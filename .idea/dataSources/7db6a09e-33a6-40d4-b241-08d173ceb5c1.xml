@@ -1,0 +1,267 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<dataSource name="travel_agency@localhost">
+  <database-model serializer="dbm" rdbms="MYSQL" format-version="4.1">
+    <root id="1"/>
+    <schema id="2" parent="1" name="travel_agency">
+      <Current>1</Current>
+      <Visible>1</Visible>
+    </schema>
+    <schema id="3" parent="1" name="information_schema"/>
+    <schema id="4" parent="1" name="mysql"/>
+    <schema id="5" parent="1" name="performance_schema"/>
+    <schema id="6" parent="1" name="sys"/>
+    <table id="7" parent="2" name="cities"/>
+    <table id="8" parent="2" name="countries"/>
+    <table id="9" parent="2" name="orders"/>
+    <table id="10" parent="2" name="tours"/>
+    <table id="11" parent="2" name="transport"/>
+    <table id="12" parent="2" name="users"/>
+    <column id="13" parent="7" name="id_city">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="14" parent="7" name="name">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="15" parent="7" name="id_country">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <index id="16" parent="7" name="id_country_idx">
+      <ColNames>id_country</ColNames>
+    </index>
+    <key id="17" parent="7" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_city</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="18" parent="7" name="id_country">
+      <ColNames>id_country</ColNames>
+      <RefSchemaName>travel_agency</RefSchemaName>
+      <RefTableName>countries</RefTableName>
+      <RefColNames>id_country</RefColNames>
+    </foreign-key>
+    <column id="19" parent="8" name="id_country">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="20" parent="8" name="name">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <key id="21" parent="8" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_country</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <column id="22" parent="9" name="id_orders">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="23" parent="9" name="id_user">
+      <Position>2</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="24" parent="9" name="id_tour">
+      <Position>3</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="25" parent="9" name="quantity">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="26" parent="9" name="total_price">
+      <Position>5</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="27" parent="9" name="order_date">
+      <Position>6</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="28" parent="9" name="departure_date">
+      <Position>7</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="29" parent="9" name="arrival_date">
+      <Position>8</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <index id="30" parent="9" name="id_tour_idx">
+      <ColNames>id_tour</ColNames>
+    </index>
+    <index id="31" parent="9" name="id_user_idx">
+      <ColNames>id_user</ColNames>
+    </index>
+    <key id="32" parent="9" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_orders</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="33" parent="9" name="id_user">
+      <ColNames>id_user</ColNames>
+      <RefSchemaName>travel_agency</RefSchemaName>
+      <RefTableName>users</RefTableName>
+      <RefColNames>id_user</RefColNames>
+    </foreign-key>
+    <foreign-key id="34" parent="9" name="id_tour">
+      <ColNames>id_tour</ColNames>
+      <RefSchemaName>travel_agency</RefSchemaName>
+      <RefTableName>tours</RefTableName>
+      <RefColNames>id_tours</RefColNames>
+    </foreign-key>
+    <column id="35" parent="10" name="id_tours">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="36" parent="10" name="name">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="37" parent="10" name="summary">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="38" parent="10" name="description">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="39" parent="10" name="departureDate">
+      <Position>5</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="40" parent="10" name="arrivalDate">
+      <Position>6</Position>
+      <DataType>date|0</DataType>
+    </column>
+    <column id="41" parent="10" name="cities">
+      <Position>7</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="42" parent="10" name="price">
+      <Position>8</Position>
+      <DataType>double|0</DataType>
+    </column>
+    <column id="43" parent="10" name="lastMinute">
+      <Position>9</Position>
+      <DataType>tinyint(4)|0</DataType>
+    </column>
+    <column id="44" parent="10" name="id_transport">
+      <Position>10</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+    </column>
+    <column id="45" parent="10" name="services">
+      <Position>11</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="46" parent="10" name="pathImage">
+      <Position>12</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <index id="47" parent="10" name="id_transport_idx">
+      <ColNames>id_transport</ColNames>
+    </index>
+    <key id="48" parent="10" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_tours</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <foreign-key id="49" parent="10" name="id_transport">
+      <ColNames>id_transport</ColNames>
+      <RefSchemaName>travel_agency</RefSchemaName>
+      <RefTableName>transport</RefTableName>
+      <RefColNames>id_transport</RefColNames>
+    </foreign-key>
+    <column id="50" parent="11" name="id_transport">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="51" parent="11" name="name">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <index id="52" parent="11" name="id_transport_UNIQUE">
+      <ColNames>id_transport</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="53" parent="11" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_transport</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="54" parent="11" name="id_transport_UNIQUE">
+      <ColNames>id_transport</ColNames>
+      <UnderlyingIndexName>id_transport_UNIQUE</UnderlyingIndexName>
+    </key>
+    <column id="55" parent="12" name="id_user">
+      <Position>1</Position>
+      <DataType>int(11)|0</DataType>
+      <NotNull>1</NotNull>
+      <SequenceIdentity>1</SequenceIdentity>
+    </column>
+    <column id="56" parent="12" name="login">
+      <Position>2</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="57" parent="12" name="password">
+      <Position>3</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="58" parent="12" name="role">
+      <Position>4</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="59" parent="12" name="email">
+      <Position>5</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="60" parent="12" name="name">
+      <Position>6</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="61" parent="12" name="surname">
+      <Position>7</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <column id="62" parent="12" name="discount">
+      <Position>8</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="63" parent="12" name="balance">
+      <Position>9</Position>
+      <DataType>int(11)|0</DataType>
+    </column>
+    <column id="64" parent="12" name="orders">
+      <Position>10</Position>
+      <DataType>varchar(45)|0</DataType>
+    </column>
+    <index id="65" parent="12" name="id_user_UNIQUE">
+      <ColNames>id_user</ColNames>
+      <Unique>1</Unique>
+    </index>
+    <key id="66" parent="12" name="PRIMARY">
+      <NameSurrogate>1</NameSurrogate>
+      <ColNames>id_user</ColNames>
+      <Primary>1</Primary>
+    </key>
+    <key id="67" parent="12" name="id_user_UNIQUE">
+      <ColNames>id_user</ColNames>
+      <UnderlyingIndexName>id_user_UNIQUE</UnderlyingIndexName>
+    </key>
+  </database-model>
+</dataSource>
